@@ -46,20 +46,36 @@
       <HintPath>..\packages\SC.Microsoft.Extensions.DependencyInjection.Abstractions.9.0.1\lib\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sitecore.Analytics, Version=11.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Sitecore.Analytics.9.0.1\lib\Sitecore.Analytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sitecore.EmailCampaign, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SC.Sitecore.EmailCampaign.9.0.1\lib\Sitecore.EmailCampaign.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.EmailCampaign.Cm, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Sitecore.EmailCampaign.Cm.9.0.1\lib\Sitecore.EmailCampaign.Cm.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.EmailCampaign.Model, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SC.Sitecore.EmailCampaign.Model.9.0.1\lib\Sitecore.EmailCampaign.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Sitecore.EmailCampaign.Model.Web, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Sitecore.EmailCampaign.Model.Web.9.0.1\lib\Sitecore.EmailCampaign.Model.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.ExM.Framework, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Sitecore.ExM.Framework.9.0.1\lib\Sitecore.ExM.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Sitecore.Framework.Conditions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SC.Sitecore.Framework.Conditions.9.0.1\lib\Sitecore.Framework.Conditions.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\packages\SC.Sitecore.Kernel.9.0.2\lib\Sitecore.Kernel.dll</HintPath>
+    <Reference Include="Sitecore.Kernel, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Sitecore.Kernel.9.0.1\lib\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Marketing, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -79,6 +95,7 @@
   <ItemGroup>
     <Compile Include="ConfigureServices.cs" />
     <Compile Include="Modules\EmailCampaign\Services\SupportExmCampaignService.cs" />
+    <Compile Include="Pipelines\DispatchNewsletter\DeployAnalytics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
