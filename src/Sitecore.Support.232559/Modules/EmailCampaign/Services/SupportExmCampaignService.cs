@@ -103,8 +103,10 @@
       public ICampaignActivityDefinition GetMessageCampaign(Guid campaignId, CultureInfo language)
       {
         Condition.Requires(campaignId, nameof(campaignId)).IsNotNull();
+          ICampaignActivityDefinition campaignActivityDefinition = _campaignDefinitionManager.Get(campaignId, language, true)
+                                                                   ?? _campaignDefinitionManager.Get(campaignId, _cultureProvider.Get(), true);
 
-        return _campaignDefinitionManager.Get(campaignId, language, true);
+      return _campaignDefinitionManager.Get(campaignId, language, true);
       }
 
       public ICampaignActivityDefinition GetMessageCampaign(Guid campaignId)
