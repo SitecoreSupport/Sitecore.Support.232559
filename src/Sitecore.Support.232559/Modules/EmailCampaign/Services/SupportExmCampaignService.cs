@@ -106,7 +106,7 @@
           ICampaignActivityDefinition campaignActivityDefinition = _campaignDefinitionManager.Get(campaignId, language, true)
                                                                    ?? _campaignDefinitionManager.Get(campaignId, _cultureProvider.Get(), true);
 
-      return _campaignDefinitionManager.Get(campaignId, language, true);
+      return campaignActivityDefinition;
       }
 
       public ICampaignActivityDefinition GetMessageCampaign(Guid campaignId)
