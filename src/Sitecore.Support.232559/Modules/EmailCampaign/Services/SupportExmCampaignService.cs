@@ -99,22 +99,11 @@
         return Factory.GetLinkDatabase().GetItemReferrers(item, false);
       }
 
-    //This method is a custom one as the default one doesn't accept CultureInfo
-      public ICampaignActivityDefinition GetMessageCampaign(Guid campaignId, CultureInfo language)
-      {
-        Condition.Requires(campaignId, nameof(campaignId)).IsNotNull();
-          ICampaignActivityDefinition campaignActivityDefinition = _campaignDefinitionManager.Get(campaignId, language, true)
-                                                                   ?? _campaignDefinitionManager.Get(campaignId, _cultureProvider.Get(), true);
-
-      return campaignActivityDefinition;
-      }
-
       public ICampaignActivityDefinition GetMessageCampaign(Guid campaignId)
       {
         Condition.Requires(campaignId, nameof(campaignId)).IsNotNull();
-
-        return _campaignDefinitionManager.Get(campaignId, _cultureProvider.Get(), true);
-      }
+        return _campaignDefinitionManager.Get(campaignId, CultureInfo.InvariantCulture, true);
+    }
       public ICampaignActivityDefinition GetMessageCampaign(MessageItem message)
       {
         Condition.Requires(message, nameof(message)).IsNotNull();
@@ -125,7 +114,7 @@
           messageCampaignId = GetMessageItem(message.MessageId).CampaignId;
         }
 
-        return GetMessageCampaign(messageCampaignId.Guid, message.TargetLanguage.CultureInfo);
+        return GetMessageCampaign(messageCampaignId.Guid);
       }
 
       public Item GetItem(string itemPath)
